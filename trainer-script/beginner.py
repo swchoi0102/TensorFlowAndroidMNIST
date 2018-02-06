@@ -30,7 +30,7 @@ with g.as_default():
     init = tf.initialize_all_variables()
     sess.run(init)
 
-    for i in range(1000):
+    for i in range(100):
         batch_xs, batch_ys = mnist.train.next_batch(100)
         train_step.run({x: batch_xs, y_: batch_ys}, sess)
 
@@ -60,7 +60,6 @@ with g_2.as_default():
     init_2 = tf.initialize_all_variables();
     sess_2.run(init_2)
 
-    
     graph_def = g_2.as_graph_def()
     
     tf.train.write_graph(graph_def, './tmp/beginner-export',
